@@ -42,4 +42,44 @@ public class UserRegistrationTest
         boolean result = validate.validateFirstName(fname);
         Assert.assertFalse(result);
     }
+
+    //TEST CASE FOR VALID LAST NAME WITH FIRST LETTER CAPTIAL
+    @Test
+    public void givenLastName_whenValidUpperCase_thenReturn()
+    {
+        String lname="Pardeshi";
+        UserRegistration validate=new UserRegistration();
+        boolean result=validate.validateLastName(lname);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE FOR INVALID LAST NAME WITH FIRST LETTER CAPITAL
+    @Test
+    public void givenLastName_whenInvalidUpperCase_thenReturn()
+    {
+        String lname="pardeshi";
+        UserRegistration validate=new UserRegistration();
+        boolean result=validate.validateLastName(lname);
+        Assert.assertFalse(result);
+    }
+
+    //TEST CASE FOR VALID LAST NAME WITH MINIMUM THREE CHARACTERS
+    @Test
+    public void givenLastName_whenValidGreaterThanThree_thenReturn()
+    {
+        String lname="Pardeshi";
+        UserRegistration validate=new UserRegistration();
+        boolean result=validate.validateLastName(lname);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE FOR INVALID LAST NAME WITH LESS THAN THREE CHARACTERS
+    @Test
+    public void givenLastName_whenInvalidGreaterThanThree_thenReturn()
+    {
+        String lname="xy";
+        UserRegistration validate=new UserRegistration();
+        boolean result=validate.validateLastName(lname);
+        Assert.assertFalse(result);
+    }
 }
