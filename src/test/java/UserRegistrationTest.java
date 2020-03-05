@@ -72,6 +72,7 @@ public class UserRegistrationTest
         boolean result=validate.validateLastName(lname);
         Assert.assertTrue(result);
     }
+
     //TEST CASE FOR INVALID LAST NAME WITH LESS THAN THREE CHARACTERS
     @Test
     public void givenLastName_whenInvalidGreaterThanThree_thenReturn()
