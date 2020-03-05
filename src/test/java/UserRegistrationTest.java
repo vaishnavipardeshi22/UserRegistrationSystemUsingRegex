@@ -186,4 +186,13 @@ public class UserRegistrationTest
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
     }
+
+    //TEST CASE FOR VALID PASSWORD FOR AT LEAST ONE NUMERIC NUMBER
+    @Test
+    public void givenPassword_whenInvalidAtLeastOneNumeric_thenReturn()
+    {
+        String password="Password";
+        boolean result=validate.validatePassword(password);
+        Assert.assertFalse(result);
+    }
 }
