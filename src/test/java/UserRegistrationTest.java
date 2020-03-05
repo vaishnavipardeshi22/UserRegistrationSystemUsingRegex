@@ -102,24 +102,42 @@ public class UserRegistrationTest
 
     //TEST CASE FOR VALID EMAIL ADDRESS
     @Test
-    public void givenEmail_WhenValid_ThenReturn()
+    public void givenEmail_whenValid_thenReturn()
     {
         for (int index=0;index<validEmail.length;index++)
         {
-            boolean result = validate.validateEmail(validEmail[index]);
+            boolean result=validate.validateEmail(validEmail[index]);
             System.out.println(validEmail[index]+" : "+result);
             Assert.assertTrue(result);
         }
     }
-    //TEST CASE FOR INVALID EMAIL ID
+    //TEST CASE FOR INVALID EMAIL ADDRESS
     @Test
-    public void givenEmail_WhenInvalid_ThenReturn()
+    public void givenEmail_whenInvalid_thenReturn()
     {
         for (int index=0;index<invalidEmail.length;index++)
         {
-            boolean result = validate.validateEmail(invalidEmail[index]);
+            boolean result=validate.validateEmail(invalidEmail[index]);
             System.out.println(invalidEmail[index]+" : "+result);
             Assert.assertFalse(result);
         }
+    }
+
+    //TEST CASE FOR VALID MOBILE NUMBER
+    @Test
+    public void givenMobileNumber_whenValid_thenReturn()
+    {
+        String mobileNumber="91 7083503989";
+        boolean result=validate.validateMobileNumber(mobileNumber);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE FOR INVALID MOBILE NUMBER
+    @Test
+    public void givenMobileNumber_whenInvalid_thenReturn()
+    {
+        String mobileNumber="917083503989";
+        boolean result=validate.validateMobileNumber(mobileNumber);
+        Assert.assertFalse(result);
     }
 }
