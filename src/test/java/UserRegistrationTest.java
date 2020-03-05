@@ -140,4 +140,22 @@ public class UserRegistrationTest
         boolean result=validate.validateMobileNumber(mobileNumber);
         Assert.assertFalse(result);
     }
+
+    //TEST CASE FOR VALID PASSWORD FOR MINIMUM 8 CHARACTERS
+    @Test
+    public void givenPassword_whenValidMinimum8Characters_thenReturn()
+    {
+        String password="password";
+        boolean result=validate.validatePassword(password);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE FOR INVALID PASSWORD FOR LESS THAN 8 CHARACCTERS
+    @Test
+    public void givenPassword_whenInvalidMinimum8Cahracters_thenReturn()
+    {
+        String password="pass";
+        boolean result=validate.validatePassword(password);
+        Assert.assertFalse(result);
+    }
 }
