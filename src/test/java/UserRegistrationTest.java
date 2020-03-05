@@ -146,7 +146,7 @@ public class UserRegistrationTest
     @Test
     public void givenPassword_whenValidMinimum8Characters_thenReturn()
     {
-        String password="Password1";
+        String password="@Password1";
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
     }
@@ -155,7 +155,7 @@ public class UserRegistrationTest
     @Test
     public void givenPassword_whenInvalidMinimum8Characters_thenReturn()
     {
-        String password="Pas1";
+        String password="@Pas1";
         boolean result=validate.validatePassword(password);
         Assert.assertFalse(result);
     }
@@ -164,7 +164,7 @@ public class UserRegistrationTest
     @Test
     public void givenPassword_whenValidAtLeast1UpperCase_thenReturn()
     {
-        String password="Password123";
+        String password="Password@123";
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
     }
@@ -173,7 +173,7 @@ public class UserRegistrationTest
     @Test
     public void givenPassword_whenInvalidAtLeast1UpperCase_thenReturn()
     {
-        String password="password123";
+        String password="password@123";
         boolean result=validate.validatePassword(password);
         Assert.assertFalse(result);
     }
@@ -182,8 +182,35 @@ public class UserRegistrationTest
     @Test
     public void givenPassword_whenValidAtLeastOneNumeric_thenReturn()
     {
-        String password="Password123";
+        String password="Password123@";
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
+    }
+
+    //TEST CASE FOR INVALID PASSWORD FOR AT LEAST ONE NUMERIC NUMBER
+    @Test
+    public void givenPassword_whenInvalidAtLeastOneNumeric_thenReturn()
+    {
+        String password="Password@";
+        boolean result=validate.validatePassword(password);
+        Assert.assertFalse(result);
+    }
+
+    //TEST CASE FOR VALID PASSWORD FOR EXACTLY ONE SPECIAL CHARACTER
+    @Test
+    public void givenPassword_whenValidExactlyOneSpecialCharacter_thenReturn()
+    {
+        String password="Password@123";
+        boolean result=validate.validatePassword(password);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE FOR INVALID PASSWORD FOR NO SPECIAL CHARACTER
+    @Test
+    public void givenPassword_whenInvalidExactlyOneSpecialCharacter_thenReturn()
+    {
+        String password="Password123";
+        boolean result=validate.validatePassword(password);
+        Assert.assertFalse(result);
     }
 }
