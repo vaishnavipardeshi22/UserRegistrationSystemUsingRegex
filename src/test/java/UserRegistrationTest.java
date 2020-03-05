@@ -146,16 +146,16 @@ public class UserRegistrationTest
     @Test
     public void givenPassword_whenValidMinimum8Characters_thenReturn()
     {
-        String password="Password";
+        String password="Password1";
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
     }
 
     //TEST CASE FOR INVALID PASSWORD FOR LESS THAN 8 CHARACTERS
     @Test
-    public void givenPassword_whenInvalidMinimum8Cahracters_thenReturn()
+    public void givenPassword_whenInvalidMinimum8Characters_thenReturn()
     {
-        String password="pass";
+        String password="Pas1";
         boolean result=validate.validatePassword(password);
         Assert.assertFalse(result);
     }
@@ -164,7 +164,7 @@ public class UserRegistrationTest
     @Test
     public void givenPassword_whenValidAtLeast1UpperCase_thenReturn()
     {
-        String password="Password";
+        String password="Password123";
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
     }
@@ -173,8 +173,17 @@ public class UserRegistrationTest
     @Test
     public void givenPassword_whenInvalidAtLeast1UpperCase_thenReturn()
     {
-        String password="password";
+        String password="password123";
         boolean result=validate.validatePassword(password);
         Assert.assertFalse(result);
+    }
+
+    //TEST CASE FOR VALID PASSWORD FOR AT LEAST ONE NUMERIC NUMBER
+    @Test
+    public void givenPassword_whenValidAtLeastOneNumeric_thenReturn()
+    {
+        String password="Password123";
+        boolean result=validate.validatePassword(password);
+        Assert.assertTrue(result);
     }
 }
