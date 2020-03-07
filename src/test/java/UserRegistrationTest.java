@@ -30,79 +30,79 @@ public class UserRegistrationTest
 
     //TEST CASE FOR VALID FIRST NAME WITH FIRST LETTER CAPITAL
     @Test
-    public void givenFirstName_whenValidUpperCase_thenReturn()
+    public void givenFirstName_WhenValidUpperCase_ThenReturnTrue()
     {
-        String fname="Vaishnavi";
-        boolean result=validate.validateFirstName(fname);
+        String firstName="Vaishnavi";
+        boolean result=validate.validateFirstName(firstName);
         Assert.assertTrue(result);
     }
 
     //TEST CASE FOR INVALID FIRST NAME WITH LOWER CASE
     @Test
-    public void givenFirstName_whenInvalidUpperCase_thenReturn()
+    public void givenFirstName_WhenInvalidUpperCase_ThenReturnFalse()
     {
-        String fname="vaishnavi";
-        boolean result = validate.validateFirstName(fname);
+        String firstName="vaishnavi";
+        boolean result = validate.validateFirstName(firstName);
         Assert.assertFalse(result);
     }
 
     //TEST CASE FOR VALID FIRST NAME WITH MINIMUM THREE LETTERS
     @Test
-    public void givenFirstName_whenValidGreaterThanThree_thenReturn()
+    public void givenFirstName_WhenValidGreaterThanThree_ThenReturnTrue()
     {
-        String fname="Vaish";
-        boolean result = validate.validateFirstName(fname);
+        String firstName="Vaish";
+        boolean result = validate.validateFirstName(firstName);
         Assert.assertTrue(result);
     }
 
     //TEST CASE FOR INVALID FIRST NAME WITH LESS THAN THREE CHARACTERS
     @Test
-    public void givenFirstName_whenInvalidGreaterThanThree_thenReturn()
+    public void givenFirstName_WhenInvalidGreaterThanThree_ThenReturnFalse()
     {
-        String fname="Va";
-        boolean result = validate.validateFirstName(fname);
+        String firstName="Va";
+        boolean result = validate.validateFirstName(firstName);
         Assert.assertFalse(result);
     }
 
     //TEST CASE FOR VALID LAST NAME WITH FIRST LETTER CAPTIAL
     @Test
-    public void givenLastName_whenValidUpperCase_thenReturn()
+    public void givenLastName_WhenValidUpperCase_ThenReturnTrue()
     {
-        String lname="Pardeshi";
-        boolean result=validate.validateLastName(lname);
+        String lastName="Pardeshi";
+        boolean result=validate.validateLastName(lastName);
         Assert.assertTrue(result);
     }
 
     //TEST CASE FOR INVALID LAST NAME WITH FIRST LETTER CAPITAL
     @Test
-    public void givenLastName_whenInvalidUpperCase_thenReturn()
+    public void givenLastName_WhenInvalidUpperCase_ThenReturnFalse()
     {
-        String lname="pardeshi";
-        boolean result=validate.validateLastName(lname);
+        String lastName="pardeshi";
+        boolean result=validate.validateLastName(lastName);
         Assert.assertFalse(result);
     }
 
     //TEST CASE FOR VALID LAST NAME WITH MINIMUM THREE CHARACTERS
     @Test
-    public void givenLastName_whenValidGreaterThanThree_thenReturn()
+    public void givenLastName_WhenValidGreaterThanThree_ThenReturnTrue()
     {
-        String lname="Pardeshi";
-        boolean result=validate.validateLastName(lname);
+        String lastName="Pardeshi";
+        boolean result=validate.validateLastName(lastName);
         Assert.assertTrue(result);
     }
 
     //TEST CASE FOR INVALID LAST NAME WITH LESS THAN THREE CHARACTERS
     @Test
-    public void givenLastName_whenInvalidGreaterThanThree_thenReturn()
+    public void givenLastName_WhenInvalidGreaterThanThree_ThenReturnFalse()
     {
-        String lname="xy";
-        boolean result=validate.validateLastName(lname);
+        String lastName="xy";
+        boolean result=validate.validateLastName(lastName);
         Assert.assertFalse(result);
     }
 
     //TEST CASE FOR VALID EMAIL ADDRESS
     @Test
-    public void givenEmail_whenValid_thenReturn()
+    public void givenEmail_WhenValid_ThenReturnTrue()
     {
         for (int index=0;index<validEmail.length;index++)
         {
@@ -114,7 +114,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR INVALID EMAIL ADDRESS
     @Test
-    public void givenEmail_whenInvalid_thenReturn()
+    public void givenEmail_WhenInvalid_ThenReturnFalse()
     {
         for (int index=0;index<invalidEmail.length;index++)
         {
@@ -126,7 +126,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR VALID MOBILE NUMBER
     @Test
-    public void givenMobileNumber_whenValid_thenReturn()
+    public void givenMobileNumber_WhenValid_ThenReturnTrue()
     {
         String mobileNumber="91 7083503989";
         boolean result=validate.validateMobileNumber(mobileNumber);
@@ -135,7 +135,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR INVALID MOBILE NUMBER
     @Test
-    public void givenMobileNumber_whenInvalid_thenReturn()
+    public void givenMobileNumber_WhenInvalid_ThenReturnFalse()
     {
         String mobileNumber="917083503989";
         boolean result=validate.validateMobileNumber(mobileNumber);
@@ -144,7 +144,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR VALID PASSWORD FOR MINIMUM 8 CHARACTERS
     @Test
-    public void givenPassword_whenValidMinimum8Characters_thenReturn()
+    public void givenPassword_WhenValidMinimum8Characters_ThenReturnTrue()
     {
         String password="@Password1";
         boolean result=validate.validatePassword(password);
@@ -153,7 +153,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR INVALID PASSWORD FOR LESS THAN 8 CHARACTERS
     @Test
-    public void givenPassword_whenInvalidMinimum8Characters_thenReturn()
+    public void givenPassword_WhenInvalidMinimum8Characters_ThenReturnFalse()
     {
         String password="@Pas1";
         boolean result=validate.validatePassword(password);
@@ -162,7 +162,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR VALID PASSWORD FOR AT LEAST ONE UPPER CASE CHARACTER
     @Test
-    public void givenPassword_whenValidAtLeast1UpperCase_thenReturn()
+    public void givenPassword_WhenValidAtLeast1UpperCase_ThenReturnTrue()
     {
         String password="Password@123";
         boolean result=validate.validatePassword(password);
@@ -171,7 +171,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR INVALID PASSWORD FOR AT LEAST ONE UPPER CASE CHARACTER
     @Test
-    public void givenPassword_whenInvalidAtLeast1UpperCase_thenReturn()
+    public void givenPassword_WhenInvalidAtLeast1UpperCase_ThenReturnFalse()
     {
         String password="password@123";
         boolean result=validate.validatePassword(password);
@@ -180,7 +180,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR VALID PASSWORD FOR AT LEAST ONE NUMERIC NUMBER
     @Test
-    public void givenPassword_whenValidAtLeastOneNumeric_thenReturn()
+    public void givenPassword_WhenValidAtLeastOneNumeric_ThenReturnTrue()
     {
         String password="Password123@";
         boolean result=validate.validatePassword(password);
@@ -189,7 +189,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR INVALID PASSWORD FOR AT LEAST ONE NUMERIC NUMBER
     @Test
-    public void givenPassword_whenInvalidAtLeastOneNumeric_thenReturn()
+    public void givenPassword_WhenInvalidAtLeastOneNumeric_ThenReturnFalse()
     {
         String password="Password@";
         boolean result=validate.validatePassword(password);
@@ -198,7 +198,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR VALID PASSWORD FOR EXACTLY ONE SPECIAL CHARACTER
     @Test
-    public void givenPassword_whenValidExactlyOneSpecialCharacter_thenReturn()
+    public void givenPassword_WhenValidExactlyOneSpecialCharacter_ThenReturnTrue()
     {
         String password="Password@123";
         boolean result=validate.validatePassword(password);
@@ -207,7 +207,7 @@ public class UserRegistrationTest
 
     //TEST CASE FOR INVALID PASSWORD FOR NO SPECIAL CHARACTER
     @Test
-    public void givenPassword_whenInvalidExactlyOneSpecialCharacter_thenReturn()
+    public void givenPassword_WhenInvalidExactlyOneSpecialCharacter_ThenReturnFalse()
     {
         String password="Password123";
         boolean result=validate.validatePassword(password);
